@@ -1004,7 +1004,8 @@ body {
   background: none;
   box-shadow: none;
   flex: 1;
-  align-items: center; /* Re-adding this to center the buttons, but will ensure team name is block */
+  align-items: center;
+  text-align: center; /* Center text within this container */
 }
 
 .team-score-controls .team-name {
@@ -1012,9 +1013,7 @@ body {
   font-weight: bold;
   text-shadow: none;
   margin-bottom: 6px;
-  display: block; /* Make it a block element */
-  width: 100%; /* Make it take full width of its flex item */
-  text-align: center; /* Center the text within the block */
+  /* Removed display: block; and width: 100%; as align-items: center on parent handles centering */
 }
 
 .score-btn--add {

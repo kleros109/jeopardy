@@ -157,11 +157,9 @@ function createScoreControls(pointsToUse) {
   scoreButtons.innerHTML = '';
   teams.forEach((team, index) => {
     const teamControls = document.createElement('div');
-    teamControls.style.marginBottom = '16px';
+    teamControls.className = 'team-score-controls';
     
     const teamName = document.createElement('div');
-    teamName.style.marginBottom = '8px';
-    teamName.style.fontWeight = 'bold';
     teamName.style.color = team.color;
     teamName.textContent = team.name;
     
