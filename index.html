@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Camp Jeopardy!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Team Setup Screen -->
+    <div id="setup-screen" class="screen">
+        <div class="setup-container">
+            <h1 class="game-title">🏕️ Summer Camp Jeopardy! 🏕️</h1>
+            <div class="setup-content">
+                <h2>Setup Your Teams</h2>
+                <div class="team-setup">
+                    <div class="team-input-group">
+                        <label for="team1">Team 1 Name:</label>
+                        <input type="text" id="team1" class="form-control team-input" placeholder="Enter team name" maxlength="20">
+                    </div>
+                    <div class="team-input-group">
+                        <label for="team2">Team 2 Name:</label>
+                        <input type="text" id="team2" class="form-control team-input" placeholder="Enter team name" maxlength="20">
+                    </div>
+                    <div class="team-input-group">
+                        <label for="team3">Team 3 Name:</label>
+                        <input type="text" id="team3" class="form-control team-input" placeholder="Enter team name (optional)" maxlength="20">
+                    </div>
+                    <div class="team-input-group">
+                        <label for="team4">Team 4 Name:</label>
+                        <input type="text" id="team4" class="form-control team-input" placeholder="Enter team name (optional)" maxlength="20">
+                    </div>
+                </div>
+                <button id="start-game" class="btn btn--primary btn--lg">Start Game! 🎯</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <!-- Header with scores -->
+        <div class="game-header">
+            <h1 class="game-logo">🏕️ Summer Camp Jeopardy! 🏕️</h1>
+            <div id="scoreboard" class="scoreboard">
+                <!-- Team scores will be populated here -->
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-board">
+            <div class="categories-row">
+                <div class="category-header">
+                    <span class="category-icon">🍭</span>
+                    <span class="category-title">Candy Corner</span>
+                </div>
+                <div class="category-header">
+                    <span class="category-icon">🐕</span>
+                    <span class="category-title">Pet Pals</span>
+                </div>
+                <div class="category-header">
+                    <span class="category-icon">🎡</span>
+                    <span class="category-title">Fun Places</span>
+                </div>
+                <div class="category-header">
+                    <span class="category-icon">⚽</span>
+                    <span class="category-title">Playground Games</span>
+                </div>
+                <div class="category-header">
+                    <span class="category-icon">🏕️</span>
+                    <span class="category-title">Summer Camp Fun</span>
+                </div>
+                <div class="category-header">
+                    <span class="category-icon">🎬</span>
+                    <span class="category-title">Movie Magic</span>
+                </div>
+            </div>
+
+            <!-- Point Value Rows -->
+            <div class="points-row">
+                <button class="point-button" data-category="Candy Corner" data-points="100">$100</button>
+                <button class="point-button" data-category="Pet Pals" data-points="100">$100</button>
+                <button class="point-button" data-category="Fun Places" data-points="100">$100</button>
+                <button class="point-button" data-category="Playground Games" data-points="100">$100</button>
+                <button class="point-button" data-category="Summer Camp Fun" data-points="100">$100</button>
+                <button class="point-button" data-category="Movie Magic" data-points="100">$100</button>
+            </div>
+            <div class="points-row">
+                <button class="point-button" data-category="Candy Corner" data-points="200">$200</button>
+                <button class="point-button" data-category="Pet Pals" data-points="200">$200</button>
+                <button class="point-button" data-category="Fun Places" data-points="200">$200</button>
+                <button class="point-button" data-category="Playground Games" data-points="200">$200</button>
+                <button class="point-button" data-category="Summer Camp Fun" data-points="200">$200</button>
+                <button class="point-button" data-category="Movie Magic" data-points="200">$200</button>
+            </div>
+            <div class="points-row">
+                <button class="point-button" data-category="Candy Corner" data-points="300">$300</button>
+                <button class="point-button" data-category="Pet Pals" data-points="300">$300</button>
+                <button class="point-button" data-category="Fun Places" data-points="300">$300</button>
+                <button class="point-button" data-category="Playground Games" data-points="300">$300</button>
+                <button class="point-button" data-category="Summer Camp Fun" data-points="300">$300</button>
+                <button class="point-button" data-category="Movie Magic" data-points="300">$300</button>
+            </div>
+            <div class="points-row">
+                <button class="point-button point-button--hard" data-category="Candy Corner" data-points="400">$400</button>
+                <button class="point-button point-button--hard" data-category="Pet Pals" data-points="400">$400</button>
+                <button class="point-button point-button--hard" data-category="Fun Places" data-points="400">$400</button>
+                <button class="point-button point-button--hard" data-category="Playground Games" data-points="400">$400</button>
+                <button class="point-button point-button--hard" data-category="Summer Camp Fun" data-points="400">$400</button>
+                <button class="point-button point-button--hard" data-category="Movie Magic" data-points="400">$400</button>
+            </div>
+            <div class="points-row">
+                <button class="point-button point-button--hard" data-category="Candy Corner" data-points="500">$500</button>
+                <button class="point-button point-button--hard" data-category="Pet Pals" data-points="500">$500</button>
+                <button class="point-button point-button--hard" data-category="Fun Places" data-points="500">$500</button>
+                <button class="point-button point-button--hard" data-category="Playground Games" data-points="500">$500</button>
+                <button class="point-button point-button--hard" data-category="Summer Camp Fun" data-points="500">$500</button>
+                <button class="point-button point-button--hard" data-category="Movie Magic" data-points="500">$500</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Modal -->
+    <div id="question-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-category" class="modal-category"></h2>
+                <span id="modal-points" class="modal-points"></span>
+            </div>
+            <div class="modal-body">
+                <div id="question-text" class="question-text"></div>
+                <div id="answer-text" class="answer-text hidden"></div>
+                <div class="modal-buttons">
+                    <button id="show-answer" class="btn btn--primary btn--lg">Show Answer 🎯</button>
+                    <button id="close-modal" class="btn btn--secondary btn--lg">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Screen -->
+    <div id="final-screen" class="screen hidden">
+        <div class="final-container">
+            <h1 class="final-title">🎉 Game Complete! 🎉</h1>
+            <div id="final-scores" class="final-scores">
+                <!-- Final scores will be populated here -->
+            </div>
+            <div class="final-buttons">
+                <button id="new-game" class="btn btn--primary btn--lg">New Game 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Score Control Panel -->
+    <div id="score-controls" class="score-controls hidden">
+        <h3>Award Points:</h3>
+        <div id="score-buttons" class="score-buttons">
+            <!-- Team score buttons will be populated here -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
