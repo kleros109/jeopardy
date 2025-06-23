@@ -1005,6 +1005,7 @@ body {
   background: none;
   box-shadow: none;
   flex: 1;
+  text-align: center;
 }
 
 .team-score-controls .team-name {
@@ -1012,8 +1013,6 @@ body {
   font-weight: bold;
   text-shadow: none;
   margin-bottom: 6px;
-  text-align: center;
-  width: 100%;
 }
 
 .score-btn--add {
