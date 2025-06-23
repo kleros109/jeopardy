@@ -966,104 +966,59 @@ body {
 /* Score Controls */
 .score-controls {
   position: fixed;
-  bottom: var(--space-20);
-  left: var(--space-20);
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 95vw;
+  max-width: 98vw;
   background: var(--color-surface);
-  padding: var(--space-20);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  padding: var(--space-16) var(--space-24) var(--space-16) var(--space-24);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.10);
   z-index: 1001;
-  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .score-controls h3 {
   color: var(--color-fun-blue);
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-12);
   text-align: center;
 }
 
-.score-buttons {
-  display: grid;
-  gap: var(--space-8);
-}
-
-.score-btn {
-  padding: var(--space-8) var(--space-16);
-  border: none;
-  border-radius: var(--radius-md);
-  font-weight: var(--font-weight-bold);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-standard);
-}
-
-.score-btn--add {
-  background: var(--color-success);
-  color: var(--color-fun-blue);
-}
-
-.score-btn--subtract {
-  background: #FFB6C1;
-  color: var(--color-fun-blue);
-}
-
-.score-btn:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-}
-
-.score-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-#score-controls {
-  margin-top: 20px;
+#score-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: row;
+  gap: 24px;
   justify-content: center;
+  width: 100%;
 }
 
 .team-score-controls {
-  padding: 15px;
+  min-width: 140px;
+  max-width: 180px;
+  padding: 10px 8px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  min-width: 150px;
+  gap: 8px;
+  background: none;
+  box-shadow: none;
 }
 
-.team-score-controls .team-name {
-  color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  margin-bottom: 5px;
-}
-
-.score-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.1s ease-in-out, opacity 0.2s;
-  width: 100%;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.score-btn:hover {
-  transform: scale(1.05);
-}
-
-.score-btn:active {
-  transform: scale(0.95);
-}
-
-/* Ensure score controls are hidden by default */
-#score-controls.hidden {
-  display: none;
+@media (max-width: 900px) {
+  .score-controls {
+    flex-direction: column;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 8px 2vw 8px 2vw;
+  }
+  #score-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 /* Final Screen */
