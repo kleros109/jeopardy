@@ -996,8 +996,6 @@ body {
 }
 
 .team-score-controls {
-  min-width: 140px;
-  max-width: 180px;
   padding: 10px 8px;
   border-radius: 8px;
   display: flex;
@@ -1006,6 +1004,7 @@ body {
   gap: 8px;
   background: none;
   box-shadow: none;
+  flex: 1;
 }
 
 .team-score-controls .team-name {
