@@ -1010,7 +1010,7 @@ body {
 
 .team-score-controls .team-name {
   color: var(--color-text);
-  font-weight: bold;
+  font-weight: 900; /* Increased font-weight for bolder appearance */
   text-shadow: none;
   margin-bottom: 6px;
   /* Removed display: block; and width: 100%; as align-items: center on parent handles centering */
