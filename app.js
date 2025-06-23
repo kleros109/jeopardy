@@ -70,7 +70,7 @@ window.addPoints = function(teamIndex, points) {
   if (teamIndex >= 0 && teamIndex < teams.length && points > 0) {
     teams[teamIndex].score += points;
     updateScoreboard();
-    playSound('correct');
+    // playSound('correct');
   }
 };
 
@@ -281,7 +281,7 @@ function endGame() {
     finalScores.appendChild(teamDiv);
   });
   
-  playSound('complete');
+  // playSound('complete');
 }
 
 // Reset game
@@ -309,51 +309,51 @@ function resetGame() {
 }
 
 // Add some fun sound effects (simple beeps using Web Audio API)
-function playSound(type) {
-  try {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    
-    switch(type) {
-      case 'select':
-        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-        break;
-      case 'correct':
-        oscillator.frequency.setValueAtTime(1000, audioContext.currentTime);
-        gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
-        break;
-      case 'complete':
-        oscillator.frequency.setValueAtTime(1200, audioContext.currentTime);
-        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-        break;
-    }
-    
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + 0.3);
-    
-    // Close audio context after playing
-    setTimeout(() => {
-      audioContext.close();
-    }, 500);
-  } catch (error) {
-    // Silently fail if Web Audio API is not supported
-    console.log('Audio not supported');
-  }
-}
+// function playSound(type) {
+//   try {
+//     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+//     const oscillator = audioContext.createOscillator();
+//     const gainNode = audioContext.createGain();
+//     
+//     oscillator.connect(gainNode);
+//     gainNode.connect(audioContext.destination);
+//     
+//     switch(type) {
+//       case 'select':
+//         oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+//         gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+//         break;
+//       case 'correct':
+//         oscillator.frequency.setValueAtTime(1000, audioContext.currentTime);
+//         gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+//         break;
+//       case 'complete':
+//         oscillator.frequency.setValueAtTime(1200, audioContext.currentTime);
+//         gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+//         break;
+//     }
+//     
+//     oscillator.start();
+//     oscillator.stop(audioContext.currentTime + 0.3);
+//     
+//     // Close audio context after playing
+//     setTimeout(() => {
+//       audioContext.close();
+//     }, 500);
+//   } catch (error) {
+//     // Silently fail if Web Audio API is not supported
+//     console.log('Audio not supported');
+//   }
+// }
 
-// Add sound effects to interactions
+// Remove sound effects from interactions
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('point-button') && !e.target.disabled) {
-    playSound('select');
+    // playSound('select');
   } else if (e.target.id === 'show-answer') {
-    playSound('correct');
+    // playSound('correct');
   } else if (e.target.id === 'start-game') {
-    playSound('complete');
+    // playSound('complete');
   }
 });
 
