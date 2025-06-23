@@ -791,7 +791,7 @@ body {
 
 .team-name {
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-3xl); /* Increased font size for team names */
   color: var(--color-fun-blue);
   margin-bottom: var(--space-4);
 }
