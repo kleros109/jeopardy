@@ -163,7 +163,7 @@ function createScoreControls(pointsToUse) {
     teamName.style.color = team.color;
     teamName.textContent = team.name;
     
-    const pointsToAward = Number(pointsToUse) || 0;
+    const pointsToAward = Number(pointsToUse);
 
     const addBtn = document.createElement('button');
     addBtn.className = 'score-btn score-btn--add';
