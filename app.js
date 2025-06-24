@@ -67,10 +67,14 @@ const scoreButtons = document.getElementById('score-buttons');
 
 // Make functions globally accessible for onclick handlers
 window.addPoints = function(teamIndex, points) {
+  console.log('addPoints called:', teamIndex, points, teams.length);
   if (teamIndex >= 0 && teamIndex < teams.length && points > 0) {
     teams[teamIndex].score += points;
     updateScoreboard();
+    console.log('Points added successfully');
     // playSound('correct');
+  } else {
+    console.log('addPoints validation failed:', teamIndex, points, teams.length);
   }
 };
 
@@ -171,6 +175,7 @@ function createScoreControls(pointsToUse) {
     addBtn.style.marginRight = '8px';
     addBtn.disabled = pointsToAward === 0;
     addBtn.addEventListener('click', () => {
+      console.log('Add button clicked:', index, pointsToAward, teams.length);
       window.addPoints(index, pointsToAward);
     });
     
@@ -179,6 +184,7 @@ function createScoreControls(pointsToUse) {
     subtractBtn.textContent = `Subtract -$${pointsToAward}`;
     subtractBtn.disabled = pointsToAward === 0;
     subtractBtn.addEventListener('click', () => {
+      console.log('Subtract button clicked:', index, pointsToAward, teams.length);
       window.subtractPoints(index, pointsToAward);
     });
     
